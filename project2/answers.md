@@ -33,7 +33,7 @@ The checksums are different because OpenSSL pics a new random salt everytime you
 #5
 The RSA and Ed25519 key sizes can't be compared directly as RSA relies on factoring large numbers, which has relatively efficient known attacks, so i tneeds very large keys to stay secure. Ed25519 relies on the elliptic curve discrete logarithmic problem which has no shortcut, so a 256-bit key gives about 128 bits of security, meaning a small key is just about as strong despite the size. 
 
-# 7
+#7
 Defect 1: There is no decrypt function so the GCM tag is never checked anywhere. For what an attacker could do, whoever writes the decryptor might skip or mishandle the check and accept a modified file. This defect violates Integrity / authentication. 
 Defect 2: There are no password requirements, so an empty or shore password is accepted. This means the attacker could guess the password offline, since the salt is stored in the file. This violates key strength, because the key is only as strong as the passphrase.
 Defect 3: PBKDF2 is not memory-hard, so an attacker could run guesses cheaply in parallel on GPUs. This violates key derivation concept.

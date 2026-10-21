@@ -1,6 +1,6 @@
-kate.young:nipper
-svc01:work
-svc02:courtney
-kthomas:audreyry
-c.perez:1978123
-jordan:84977
+nipper
+work
+courtney
+audreyry
+1978123
+84977
